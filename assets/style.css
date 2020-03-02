@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  cursor: url(Assets/Cursors/Ghost.cur), auto;
+  font-family: "Exo", serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(#9D5900, #3D2200);
+}
+
+.page-title {
+  color: #FF6D00;
+  font-family: "Exo", serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.game-info-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info {
+  color: #FFBB89;
+  font-size: 4em;
+}
+
+.game-container {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  background-color: blue;
+  position: relative;
+  cursor: url("Assets/Cursors/GhostHover.cur"), auto;
+  height: 175px;
+  width: 125px;
+}
+
+
+
+
+/* media */
+
+@media (max-width: 600px) {
+  .game-container {
+    grid-template-columns: repeat(2, auto)
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
