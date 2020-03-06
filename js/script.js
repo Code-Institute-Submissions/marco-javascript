@@ -1,11 +1,11 @@
 class AudioController {
     constructor() {
-        this.bgMusic = new Audio('Assets/Audio/Avengers.mp3');
-        this.flipSound = new Audio('Assets/Audio/Card-flip.mp3');
-        this.matchSound = new Audio('Assets/Audio/match.wav');
-        this.victorySound = new Audio('Assets/Audio/victory.wav');
-        this.gameOverSound = new Audio('Assets/Audio/gameOver.wav');
-        this.bgMusic.volume = 0.5;
+        this.bgMusic = new Audio('assets/audio/Avengers.mp3');
+        this.flipSound = new Audio('assets/audio/flip.mp3');
+        this.matchSound = new Audio('assets/audio/match.wav');
+        this.victorySound = new Audio('assets/audio/victory.wav');
+        this.gameOverSound = new Audio('assets/audio/gameOver.wav');
+        this.bgMusic.volume = 0.6;
         this.bgMusic.loop = true;
     }
     startMusic() {
@@ -46,6 +46,22 @@ class MarvelMatch {
         this.cardToCheck = null;
         this.matchedCards = [];
         this.busy = true;
+        setTimeout(() => {
+            this.audioController.startMusic();
+            this.shuffleCards(this.cardsArray);
+            this.countDown = this.startCountDown();
+            this.busy = false;
+        }, 500)
+        this.hideCards();
+        this.timer.innerText = this.timeRemaining;
+        this.ticker.innerText = this.totalClicks;
+    }
+
+    hideCards() {
+        this.cardsArray.forEach(card => {
+            card.classList.remove('visible');
+            card.classList.remove('matched');
+        });
     }
 
     flipCard(card) {
@@ -57,11 +73,31 @@ class MarvelMatch {
         }
     }
 
+    startCountDown() {
+        return setInterval(() => {
+            this.timeRemaining--;
+            this.timer.innerText = this.timeRemaining;
+            if(this.timeRemaining === 0)
+                this.gameOver();
+        }, 1000);
+    }
+
+    gameOver() {
+        clearInterval(this.countDown);
+        this.audioController.gameOver();
+        document.getElementById('game-over-text').classList.add('visible');
+    }
+
     /* using Fisher–Yates Shuffle code */
+    shuffleCards() {
+        for (let i = this.cardsArray.length - 1; i > 0; i--) {
+            let randomIndex = Math.floor(Math.random() * (i +1));
+            this.cardsArray[randomIndex].style.order = i;
+            this.cardsArray[i].style.order = randomIndex;
+        }
+    }
 
-
-
-    canFlipCard(card) {
+    canFlipCard() {
         return true;
         /*return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;*/
     }
@@ -71,7 +107,7 @@ class MarvelMatch {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MarvelMatch(100, cards); 
+    let game = new MarvelMatch(10, cards); 
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {

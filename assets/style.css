@@ -6,12 +6,12 @@
 
 body {
   margin: 0;
-  background: radial-gradient(#9D5900, #3D2200);
+  background-image: radial-gradient(red, yellow, green);
 }
 
 .page-title {
-  color: #FF6D00;
-  font-family: "Exo", serif;
+  color: blue;
+  font-family: 'Press Start 2P', cursive;
   font-weight: normal;
   text-align: center;
   font-size: 5em;
@@ -24,8 +24,10 @@ body {
 }
 
 .game-info {
-  color: #FFBB89;
-  font-size: 4em;
+  color: blue;
+  font-size: 2em;
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 .game-container {
@@ -80,8 +82,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  color: rgb(98, 0, 255);
-  font-family: "exo", serif;
+  color: rgb(145, 255, 0);
 }
 
 .overlay-text-small {
@@ -102,18 +103,6 @@ body {
   to {
     background-color: rgba(0, 0, 0, .8);
     font-size: 10em;
-  }
-}
-
-@keyframes dance {
-  0%, 100%  {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(-30deg);
-  }
-  75% {
-    transform: rotate(30deg);
   }
 }
 
