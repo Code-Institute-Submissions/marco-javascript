@@ -10,7 +10,7 @@ body {
 }
 
 .page-title {
-  color: blue;
+  color: #FF6D00;
   font-family: 'Press Start 2P', cursive;
   font-weight: normal;
   text-align: center;
@@ -24,7 +24,7 @@ body {
 }
 
 .game-info {
-  color: blue;
+  color: #FF6D00;
   font-size: 2em;
   font-family: 'Press Start 2P', cursive;
 
@@ -72,6 +72,19 @@ body {
   animation: dance 1s linear infinite 500ms;
 }
 
+.circle-btn {
+    font-size: 2.5rem;
+    color: #336666;
+    border: 4px solid #336666;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.selection-button button, .selection-button img {
+    height: 80px;
+    width: 80px;
+}
 .overlay-text {
   display: none;
   position: fixed;
@@ -82,7 +95,8 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  color: rgb(145, 255, 0);
+  color:#FF6D00;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .overlay-text-small {
@@ -95,16 +109,6 @@ body {
   animation: overlay-grow 500ms forwards;
 }
 
-@keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, .8);
-    font-size: 10em;
-  }
-}
 
 .card-back {
   background-color: black;
@@ -127,18 +131,38 @@ body {
 }
 
 
-
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 4em;
+  }
+}
 
 
 /* media */
 
 @media (max-width: 600px) {
+  
   .game-container {
-    grid-template-columns: repeat(2, auto)
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
   }
 
   .game-info-container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .overlay-text {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .page-title {
+      text-align: center;
   }
 }

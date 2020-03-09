@@ -1,3 +1,5 @@
+// Audio for: match card, flip card, bg, gameover, victory
+
 class AudioController {
     constructor() {
         this.bgMusic = new Audio('assets/audio/Avengers.mp3');
@@ -8,28 +10,35 @@ class AudioController {
         this.bgMusic.volume = 0.6;
         this.bgMusic.loop = true;
     }
+
     startMusic() {
         this.bgMusic.play();
     }
+
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
     }
+
     flip() {
         this.flipSound.play();
     }
+
     match() {
         this.matchSound.play();
     }
+
     victory() {
         this.stopMusic();
         this.victorySound.play();
     }
+
     gameOver() {
         this.stopMusic();
         this.gameOverSound.play();
     }
 }
+
 class MarvelMatch {
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -70,8 +79,53 @@ class MarvelMatch {
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
             card.classList.add('visible');
+
+          
+        //matching card 
+
+            if(this.cardToCheck) 
+                this.checkForCardMatch(card);
+              else 
+                this.cardToCheck = card;
+        
         }
     }
+
+    checkForCardMatch(card) {
+        if(this.getCardType(card) === this.getCardType(this.cardToCheck))
+            this.cardMatch(card, this.cardToCheck);
+        else 
+            this.cardMisMatch(card, this.cardToCheck);
+
+         this.cardToCheck = null;
+    }
+
+    cardMatch(card1, card2) {
+        this.matchedCards.push(card1);
+        this.matchedCards.push(card2);
+        card1.classList.add('matched');
+        card2.classList.add('matched');
+        this.audioController.match();
+        if(this.matchedCards.length === this.cardsArray)
+            this.victory();
+    }
+
+    cardMisMatch(card1, card2) {
+        this.busy = true;
+        setTimeout(() => {
+            card1.classList.remove('visible');
+            card2.classList.remove('visible');
+            this.busy = false;
+        }, 1000);
+    }
+    
+     getCardType(card) {
+        return card.getElementsByClassName('card-value')[0].src;
+    }
+
+
+
+    // start countdown if time finished gameover if matched all cards victory 
 
     startCountDown() {
         return setInterval(() => {
@@ -87,6 +141,14 @@ class MarvelMatch {
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
+ 
+    victory() {
+        clearInterval(this.countdown);
+        this.audioController.victory();
+        document.getElementById('victory-text').classList.add('visible');
+    }
+
+
 
     /* using Fisher–Yates Shuffle code */
     shuffleCards() {
@@ -99,7 +161,6 @@ class MarvelMatch {
 
     canFlipCard() {
         return true;
-        /*return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;*/
     }
 }
 
@@ -107,7 +168,7 @@ class MarvelMatch {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MarvelMatch(10, cards); 
+    let game = new MarvelMatch(100, cards); 
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
@@ -115,6 +176,14 @@ function ready() {
             game.startGame();
         });
     });
+
+
+// help button for game description
+
+$('#help-button').click(function(e){
+  e.preventDefault();
+  console.log('clicked');
+})
 
     cards.forEach(card => {
         card.addEventListener('click', () => {
