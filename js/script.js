@@ -57,7 +57,7 @@ class MarvelMatch {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.shuffleCards(this.cardsArray);
+            this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
@@ -83,11 +83,19 @@ class MarvelMatch {
           
         //matching card 
 
-            if(this.cardToCheck) 
+            /*if(this.cardToCheck) 
                 this.checkForCardMatch(card);
               else 
                 this.cardToCheck = card;
         
+        }
+    }*/
+
+    if(this.cardToCheck) {
+                this.checkForCardMatch(card);
+            } else {
+                this.cardToCheck = card;
+            }
         }
     }
 
@@ -106,7 +114,7 @@ class MarvelMatch {
         card1.classList.add('matched');
         card2.classList.add('matched');
         this.audioController.match();
-        if(this.matchedCards.length === this.cardsArray)
+        if(this.matchedCards.length === this.cardsArray.length)
             this.victory();
     }
 
@@ -122,7 +130,6 @@ class MarvelMatch {
      getCardType(card) {
         return card.getElementsByClassName('card-value')[0].src;
     }
-
 
 
     // start countdown if time finished gameover if matched all cards victory 
@@ -143,11 +150,10 @@ class MarvelMatch {
     }
  
     victory() {
-        clearInterval(this.countdown);
+        clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
     }
-
 
 
     /* using Fisher–Yates Shuffle code */
@@ -159,8 +165,8 @@ class MarvelMatch {
         }
     }
 
-    canFlipCard() {
-        return true;
+    canFlipCard(card) {
+        return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
     }
 }
 
