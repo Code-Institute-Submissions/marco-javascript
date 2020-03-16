@@ -17,6 +17,29 @@ body {
   font-size: 5em;
 }
 
+#button {
+   text-align: center;
+   font-family: 'Press Start 2P', cursive;
+}
+
+
+
+.btn-primary {
+    background-color:  #FF6D00;
+    border-color:  #FF6D00;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-primary:hover {
+     background-color: orange;
+     transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+
 .game-info-container {
   grid-column: 1 / -1;
   display: flex;
@@ -97,6 +120,7 @@ body {
   z-index: 100;
   color:#FF6D00;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .overlay-text-small {
@@ -143,6 +167,7 @@ body {
 }
 
 
+
 /* media */
 
 @media (max-width: 600px) {
@@ -160,9 +185,14 @@ body {
   .overlay-text {
       flex-direction: column;
       text-align: center;
+      font-size: 2em;
   }
 
   .page-title {
       text-align: center;
+      font-size: 3em;
+      padding-top: 10px;
   }
+
+
 }

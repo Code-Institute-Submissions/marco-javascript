@@ -40,7 +40,7 @@ class AudioController {
 }
 
 class MarvelMatch {
-    constructor(totalTime, cards) {
+    constructor(totalTime, cards) {       
         this.cardsArray = cards;
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
@@ -80,16 +80,6 @@ class MarvelMatch {
             this.ticker.innerText = this.totalClicks;
             card.classList.add('visible');
 
-          
-        //matching card 
-
-            /*if(this.cardToCheck) 
-                this.checkForCardMatch(card);
-              else 
-                this.cardToCheck = card;
-        
-        }
-    }*/
 
     if(this.cardToCheck) {
                 this.checkForCardMatch(card);
@@ -179,12 +169,19 @@ function ready() {
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
             overlay.classList.remove('visible');
-            game.startGame();
+            //game.startGame();
         });
     });
 
 
 // help button for game description
+
+/*  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})  */
+$('#startgame').click(function(){
+    game.startGame();
+})
 
 $('#help-button').click(function(e){
   e.preventDefault();
