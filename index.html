@@ -26,12 +26,19 @@
 <button type="button" id="help-button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   HOW TO PLAY 
 </button>
-
 <button type="button" id="startgame" class="btn btn-primary" data-toggle="startgame" data-target="#startgame">
   PLAY
 </button>
 
-</div>
+<div class="audio-button mt-5">
+               <i class="mute fas fa-2x fa-volume-mute  z-index-2" style= "color: #FF6D00";></i> 
+                <i class="unmute fas fa-2x fa-volume-up  z-index-2 d-none"></i>
+            </div>
+
+<!-- <button type="button" id="stopmusic" class="btn btn-primary" data-toggle="stopmusic" data-target="#stopmusic">
+  <i class="mute fas fa-volume-mute"></i>
+</button>
+</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -47,7 +54,7 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

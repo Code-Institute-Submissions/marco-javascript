@@ -23,7 +23,6 @@ body {
 }
 
 
-
 .btn-primary {
     background-color:  #FF6D00;
     border-color:  #FF6D00;
@@ -32,13 +31,19 @@ body {
 }
 
 .btn-primary:hover {
-     background-color: orange;
+     background-color: red;
      transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
     -o-transition: all 0.35s ease-in-out;
 }
 
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-family: 'Press Start 2P', cursive;
+}
 
 .game-info-container {
   grid-column: 1 / -1;

@@ -11,14 +11,16 @@ class AudioController {
         this.bgMusic.loop = true;
     }
 
+
     startMusic() {
-        this.bgMusic.play();
+        this.bgMusic.pause();
     }
 
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
     }
+ 
 
     flip() {
         this.flipSound.play();
@@ -174,19 +176,26 @@ function ready() {
     });
 
 
-// help button for game description
+// start game button
 
-/*  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})  */
 $('#startgame').click(function(){
     game.startGame();
 })
 
-$('#help-button').click(function(e){
-  e.preventDefault();
-  console.log('clicked');
-})
+let backAudio = new Audio('assets/audio/Avengers.mp3');
+
+$('.audio-button').click(function() {
+    $('.mute').toggleClass('d-none');
+    $('.unmute').toggleClass('d-none');
+    
+    if($('.mute').hasClass('d-none')){
+         backAudio.play();
+    } else {
+         backAudio.pause();
+    }
+});
+
+
 
     cards.forEach(card => {
         card.addEventListener('click', () => {
