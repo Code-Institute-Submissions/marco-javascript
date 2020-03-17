@@ -38,12 +38,16 @@ body {
     -o-transition: all 0.35s ease-in-out;
 }
 
+#game-rules {
+    text-align: left;
+}
 
 .modal-title {
     margin-bottom: 0;
     line-height: 1.5;
     font-family: 'Press Start 2P', cursive;
 }
+
 
 .game-info-container {
   grid-column: 1 / -1;
