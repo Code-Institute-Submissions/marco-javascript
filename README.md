@@ -149,7 +149,7 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ## Credits
 
-####Content
+#### Content
 
 * All text in this project was written by the developer.
 
