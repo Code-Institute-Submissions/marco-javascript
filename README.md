@@ -127,7 +127,7 @@ To deploy Marvel - Match to GitHub Pages from its [GitHub repository](https://ma
 3. From the menu items near the top of the page, select **Settings**.
 4. Scroll down to the **GitHub Pages** section.
 5. Under **Source** click the drop-down menu labelled **None** and select **Master Branch**
-6. On selecting Master Branch the page is automatically refreshed, SpeedyGym! is now deployed.
+6. On selecting Master Branch the page is automatically refreshed, Marvel - Match is now deployed.
 7. Scroll back down to the **GitHub Pages** section to retrieve the link to the deployed website.
 
 
@@ -146,6 +146,34 @@ git clone https://github.com/USERNAME/REPOSITORY
 7. Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
+
+## Credits
+
+####Content
+
+* All text in this project was written by the developer.
+
+### Media
+
+#### Images
+
+* The images used for the memory cards were obtained from Google Images and are used for educational purposes only. Copyright for the memory card images belong to Marvel.
+
+#### Audio
+
+* The audio file for button click sound was sourced from SoundJay.
+
+* The audio files for card flip sound, matched cards sound were sourced from FreeSound.
+
+* The backgorund music was sourced on YouTube and then convert in mp3.
+
+## Acknowledgements
+
+I have taken inspiration from the game match card. My mentor, online student support and Slack were both great help throughout my project.
+
+##### Disclaimer
+
+* The content of this website, including the images used, are for educational purposes only.
 
 
 
