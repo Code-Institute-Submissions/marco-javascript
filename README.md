@@ -8,7 +8,7 @@ Marvel Match is an engaging and entertaining memory card game, designed for chil
 
 ### Project Goals
 
-The primary goal of MArvel - Match is to provide a clean, intuitive and child friendly game to entertain and delight it's users.
+The primary goal of Marvel - Match is to provide a clean, intuitive and child friendly game to entertain and delight it's users.
 
 #### Player Goal
 
@@ -30,3 +30,9 @@ Marvel - Match met these goals by:
 3. Marvel - Match includes audio and different sound as part of the game.
 4. The overall feel of this game is fun and child-friendly.
 
+#### Developer and Business Goals
+
+1. Well thought out programming that prepares for a child's random and unpredictable use of Marvel - Match. For example, that the game cannot be broken by clicking many cards quickly.
+2. Get a stronger grasp on writing code with a more professional focus.
+3. Gain a more intrinsic understanding of JavaScript and jQuery 
+4. A project the developer is excited to make a part of her portfolio.
