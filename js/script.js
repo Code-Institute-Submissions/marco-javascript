@@ -7,19 +7,20 @@ class AudioController {
         this.matchSound = new Audio('assets/audio/match.wav');
         this.victorySound = new Audio('assets/audio/victory.wav');
         this.gameOverSound = new Audio('assets/audio/gameOver.wav');
-        this.bgMusic.volume = 0.6;
+        this.bgMusic.volume = 0.4;
         this.bgMusic.loop = true;
     }
 
-
+    
     startMusic() {
         this.bgMusic.pause();
     }
 
+
     stopMusic() {
         this.bgMusic.pause();
         this.bgMusic.currentTime = 0;
-    }
+    } 
  
 
     flip() {
@@ -41,6 +42,7 @@ class AudioController {
     }
 }
 
+
 class MarvelMatch {
     constructor(totalTime, cards) {       
         this.cardsArray = cards;
@@ -58,7 +60,7 @@ class MarvelMatch {
         this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
-            this.audioController.startMusic();
+           // this.audioController.startMusic();
             this.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
@@ -166,12 +168,12 @@ class MarvelMatch {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MarvelMatch(100, cards); 
+    let game = new MarvelMatch(5, cards); 
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
             overlay.classList.remove('visible');
-            //game.startGame();
+            //game.startGame(); 
         });
     });
 
@@ -182,19 +184,20 @@ $('#startgame').click(function(){
     game.startGame();
 })
 
-let backAudio = new Audio('assets/audio/Avengers.mp3');
+// audio button: mute and unmute 
 
-$('.audio-button').click(function() {
+let bgMusic = new Audio('assets/audio/Avengers.mp3');
+
+ $('.audio-button').click(function() {
     $('.mute').toggleClass('d-none');
     $('.unmute').toggleClass('d-none');
     
     if($('.mute').hasClass('d-none')){
-         backAudio.play();
+         bgMusic.play();
     } else {
-         backAudio.pause();
+         bgMusic.pause();
     }
-});
-
+}); 
 
 
     cards.forEach(card => {
