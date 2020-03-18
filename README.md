@@ -74,4 +74,51 @@ To continue the feeling of a game made for children and Avengers fans, the backg
 The card flipping sounds and "bing" on a correct match were added to give positive feedback on use of the game.
 The sound of Victory played on completing the game was chosen because it appeals most to children.
 
+### Wireframes
+
+These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project.
+
+## Features
+
+### Existing Features
+
+1. #### Main page:
+
+* On arriving at the game for the first time, the text click to play appear. Once clicked you will be able to start play the game.
+
+2. #### Game View
+
+* The game page contains the start button, info, mute or unmute button.
+
+3. #### Mute button
+
+* The mute button switches off the background audio in the game. It is represented by a speaker icon, which switches to one with a cross next to it when active.
+
+4. #### Info button
+
+* Represented by a large How To Play button, the info button opens the info modal.
+* The info modal offers easy to understand instructions on how to play the game.
+* The info modal has a close button for close it.
+
+5. #### Play game
+
+* Once you are redy you can click the button play and the countdown will start. You have 100 Second for find all the matches cards.
+
+## Technologies Used
+* HTML
+* CSS
+* jQuery
+* JavaScript
+* Google Fonts
+* Photoshop
+* Bootstrap 4.0
+* Gitpod
+* GitHub
+* Am I Responsive
+* Font Awesome iconfont
+
+
+
+
+
 
