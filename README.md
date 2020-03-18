@@ -36,3 +36,42 @@ Marvel - Match met these goals by:
 2. Get a stronger grasp on writing code with a more professional focus.
 3. Gain a more intrinsic understanding of JavaScript and jQuery 
 4. A project the developer is excited to make a part of her portfolio.
+
+#### User Stories
+
+As a player aged between 5-10 years old, I want:
+
+1. The ability to easily find and understand the controls for the game, so that I can operate them easily.
+2. A large easy to press buttons and controls, so that my young fingers can use on all devices.
+3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.
+4. Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.
+
+### Design Choices
+
+The overall feel of the game is one that is designed for children to enjoy. The following design choices were made with this in mind:
+
+#### Fonts
+
+The primary font **Press Start 2P, cursive** was chosen because it resembles the simple letters used in videogames.
+
+#### Colours
+
+The primary colour choices of dark and light blue for the logo, titles and text were chosen because they have a clean clear aspect while contrasting each other well.
+Other colours used in the project were taken from the trophy image sourced, using a colour picker in Photoshop to make sure all colours used were consistent across the entire project.
+
+#### Styling
+
+Cards and container boxes were given rounded corners to continue the child friendly theme, many real life memory cards for children have corners like this.
+Repeating the same rounded corner pattern throughout the page keeps consistency in design and maintains the feeling that all elements belong together.
+
+#### Card images
+
+The Avangers characters were chosen for this game because they are recognised and loved by all new generations.
+
+#### Audio files
+
+To continue the feeling of a game made for children and Avengers fans, the background sound is the Avanger Theme.
+The card flipping sounds and "bing" on a correct match were added to give positive feedback on use of the game.
+The sound of Victory played on completing the game was chosen because it appeals most to children.
+
+
