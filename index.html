@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,229 +9,223 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/script.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-<h1 class="page-title">Marvel-Match</h1>
-  <div class="overlay-text visible" id="start-game">
-    Click to Start
-  </div>
+    <h1 class="page-title">Marvel-Match</h1>
+    <div class="overlay-text visible" id="start-game">
+        Click to Start
+    </div>
 
-<!-- Button trigger modal -->
-<div class="container" id="button">
-<button type="button" id="help-button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  HOW TO PLAY 
-</button>
-<button type="button" id="startgame" class="btn btn-primary" data-toggle="startgame" data-target="#startgame">
-  PLAY
-</button>
+    <!-- Button trigger modal -->
+    <div class="container" id="button">
+        <button type="button" id="help-button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            HOW TO PLAY
+        </button>
+        <button type="button" id="startgame" class="btn btn-primary" data-toggle="startgame" data-target="#startgame">
+            PLAY
+        </button>
 
-<div class="audio-button mt-5">
-               <i class="mute fas fa-2x fa-volume-mute  z-index-2" style= "color: #FF6D00";></i> 
-                <i class="unmute fas fa-2x fa-volume-up  z-index-2 d-none"></i>
+        <div class="audio-button mt-5">
+            <i class="mute fas fa-2x fa-volume-mute  z-index-2" style="color: #FF6D00" ;></i>
+            <i class="unmute fas fa-2x fa-volume-up  z-index-2 d-none"></i>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">How to play</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="game-rules">
+                        <p> 1. Flip two cards each turn to find the matching pairs. </p>
+                        <p> 2. You win when all the pairs have been found. </p>
+                        <p> 3. Mute or play the background music in the main page.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+        <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+        <div class="game-container">
+            <div class="game-info-container">
+                <div class="game-info">
+                    Time <span id="time-remaining">100</span>
+                </div>
+                <div class="game-info">
+                    Flips <span id="flips">0</span>
+                </div>
             </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">How to play</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="game-rules">
-        <p> 1. Flip two cards each turn to find the matching pairs. </p>
-        <p> 2. You win when all the pairs have been found. </p>
-        <p> 3. Mute or play the background music in the main page.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+            <!-- Modal -->
 
-  
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/captain-america.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div id="game-over-text" class="overlay-text">
-    GAME OVER
-    <span class="overlay-text-small">Click to Restart</span>
-  </div>
-  <div id="victory-text" class="overlay-text">
-    VICTORY
-    <span class="overlay-text-small">Click to Restart</span>
-  </div> 
-  <div class="game-container">
-    <div class="game-info-container">
-      <div class="game-info">
-        Time <span id="time-remaining">100</span>
-      </div>
-      <div class="game-info">
-        Flips <span id="flips">0</span>
-      </div>
-    </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/captain-america.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-<!-- Modal -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/captain-marvel.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-	
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/captain-marvel.jpg" alt="Memory Card">
+                </div>
+            </div>
 
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/doctor-strange.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/captain-america.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/doctor-strange.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/captain-america.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/hulk.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/captain-marvel.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/hulk.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/captain-marvel.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/ironman.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/doctor-strange.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/ironman.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/doctor-strange.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/spiderman1.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/hulk.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/spiderman1.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/hulk.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/thanos.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/ironman.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/thanos.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/ironman.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/Thor1.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/spiderman1.jpg" alt="Memory Card">
-    </div>
-  </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="assets/images/marvel-logo.jpg" alt="logo">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="assets/images/Thor1.jpg" alt="Memory Card">
+                </div>
+            </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/spiderman1.jpg" alt="Memory Card">
-    </div>
-  </div>
+        </div>
 
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/thanos.jpg" alt="Memory Card">
-    </div>
-  </div>
-
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/thanos.jpg" alt="Memory Card">
-    </div>
-  </div>
-
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/Thor1.jpg" alt="Memory Card">
-    </div>
-  </div>
-
-  <div class="card">
-    <div class= "card-back card-face">
-    <img src="assets/images/marvel-logo.jpg" alt="logo">
-    </div>
-    <div class= "card-front card-face">
-    <img class="card-value" src="assets/images/Thor1.jpg" alt="Memory Card">
-    </div>
-  </div>
-
-  </div>
-
-<!-- bootstraps link-->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- bootstraps link-->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>

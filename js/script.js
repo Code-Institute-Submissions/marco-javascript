@@ -1,4 +1,5 @@
 // Audio for: match card, flip card, bg, gameover, victory
+let bgMusic = new Audio('assets/audio/Avengers.mp3');
 
 class AudioController {
     constructor() {
@@ -132,18 +133,21 @@ class MarvelMatch {
         return setInterval(() => {
             this.timeRemaining--;
             this.timer.innerText = this.timeRemaining;
+
             if(this.timeRemaining === 0)
                 this.gameOver();
         }, 1000);
     }
 
     gameOver() {
+        bgMusic.pause();
         clearInterval(this.countDown);
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
  
     victory() {
+        bgMusic.pause();
         clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
@@ -186,7 +190,6 @@ $('#startgame').click(function(){
 
 // audio button: mute and unmute 
 
-let bgMusic = new Audio('assets/audio/Avengers.mp3');
 
  $('.audio-button').click(function() {
     $('.mute').toggleClass('d-none');
@@ -197,8 +200,7 @@ let bgMusic = new Audio('assets/audio/Avengers.mp3');
     } else {
          bgMusic.pause();
     }
-}); 
-
+});  
 
     cards.forEach(card => {
         card.addEventListener('click', () => {

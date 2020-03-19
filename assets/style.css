@@ -191,6 +191,10 @@ body {
     align-items: center;
   }
 
+  #victory-text {
+      font-size: 1em;
+  }
+
   .overlay-text {
       flex-direction: column;
       text-align: center;
@@ -203,5 +207,15 @@ body {
       padding-top: 10px;
   }
 
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, .8);
+    font-size: 3em;
+  }
+}
 
 }
