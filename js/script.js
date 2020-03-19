@@ -172,7 +172,7 @@ class MarvelMatch {
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
-    let game = new MarvelMatch(5, cards); 
+    let game = new MarvelMatch(100, cards); 
 
     overlays.forEach(overlay => {
         overlay.addEventListener('click', () => {
