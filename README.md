@@ -78,6 +78,8 @@ The sound of Victory played on completing the game was chosen because it appeals
 
 These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project.
 
+[View the Marvel - Match wireframes here](https://github.com/marcomoreschi/marco-javascript/tree/master/assets/wireframes)
+
 ## Features
 
 ### Existing Features
@@ -134,7 +136,7 @@ To deploy Marvel - Match to GitHub Pages from its [GitHub repository](https://ma
 ### How to run this project locally
 
 To clone this project from GitHub:
-1. Follow this link to the [Marvel - Match GitHub repository](https://marcomoreschi.github.io/marco-javascript/).
+1. Follow this link to the [Marvel - Match GitHub repository](https://github.com/marcomoreschi/marco-javascript).
 2. Under the repository name, click "Clone or download".
 3. In the Clone with HTTPs section, copy the clone URL for the repository.
 4. In your local IDE open Git Bash.
